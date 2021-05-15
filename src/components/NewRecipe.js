@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import { db } from "../firebase"
-import { makeStyles } from '@material-ui/core/styles'
+// import { makeStyles } from '@material-ui/core/styles'
 import Modal from '@material-ui/core/Modal'
 import Button from '@material-ui/core/Button'
 
@@ -21,23 +21,23 @@ function rand() {
 //     };
 // }
 
-const useStyles = makeStyles(theme => ({
-    modal: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    paper: {
-        position: 'absolute',
-        width: 450,
-        backgroundColor: theme.palette.background.paper,
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
-    },
-}));
+// const useStyles = makeStyles(theme => ({
+//     modal: {
+//         display: 'flex',
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//     },
+//     paper: {
+//         position: 'absolute',
+//         width: 450,
+//         backgroundColor: theme.palette.background.paper,
+//         boxShadow: theme.shadows[5],
+//         padding: theme.spacing(2, 4, 3),
+//     },
+// }));
 
 export default function NewRecipe() {
-    const classes = useStyles()
+    // const classes = useStyles()
     // const [modalStyle] = React.useState(getModalStyle)
     const [open, setOpen] = React.useState(false)
 

@@ -39,7 +39,7 @@ function DisplayedRecipes(){
     const [expanded, setExpanded] = React.useState(false);
 
     const [open, setOpen] = useState(false)
-    const [clicked, setClicked] = useState(false)
+    // const [clicked, setClicked] = useState(false)
 
     const [name, setName] = useState("")
     const [ingredients, setIngredients] = useState("")
@@ -92,15 +92,12 @@ function DisplayedRecipes(){
 
   }
 
-    //Edit and delete buttons within the Accordion Recipe
-    //Edit button should open a modal to edit recipe title/ingredients/directions
-    //Delete button should remove the recipe from the accordion/db
-    
-    // pass in ID that's being tracked
-    //create random ID
-    //user clicks -> pass recipe into edit recipe function
-    //want ID to stay same, other details can change
-    //query the database (based on new obj update database)
+  const handleDeleteRecipe = (e, recipe) => {
+      db
+      .collection("recipes")
+      .doc(recipe.id.toString())
+      .delete()
+  }
 
   return (
     <div className={classes.root}>
@@ -128,7 +125,7 @@ function DisplayedRecipes(){
                     Edit Recipe
                     </Button>
 
-                    <Button variant="contained" color="primary" >
+                    <Button variant="contained" color="primary" onClick = {(e) => handleDeleteRecipe(e, accordion)}>
                     Delete Recipe
                     </Button>
 
